@@ -14,4 +14,4 @@ jobs:
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
     - name: Reflect changes to github action
-      run: echo "change made"
+      run: echo "changes made"
