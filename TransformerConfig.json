@@ -17,6 +17,12 @@
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
         "TemplateName": "code_pushed.handlebars"
+    },
+    {
+        "SourceType": "IssueOpened",
+        "ClientType": "Teams",
+        "TemplateType": "Liquid",
+        "TemplateName": "issue_opened.liquid"
     }
   ],
   "partials":[],
