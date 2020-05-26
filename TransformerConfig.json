@@ -16,7 +16,7 @@
         "SourceType": "CodePushed",
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
-        "TemplateName": "issue_opened.handlebars"
+        "TemplateName": "code_pushed.handlebars"
     }
   ],
   "partials":[],
