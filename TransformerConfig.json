@@ -26,5 +26,11 @@
     }
   ],
   "partials":[],
-  "eventTransformer":[]
+  "eventTransformer":[
+    {
+      "SourceType":"IssueOpened",
+      "TemplateType":"HandleBars",
+      "TemplateName":"issue_opened.handlebars"
+    }
+  ]
 }
