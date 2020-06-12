@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Hello world action step
-      id: hello
+      id: master
       uses: ./
       with:
         who-to-greet: 'Meghna Savit'
