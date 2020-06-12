@@ -7,6 +7,7 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
+  const octokit = new github.GitHub();
   const { owner, repo } = github.context.repo;
   const event_type = 'custom';
   octokit.repos.createDispatchEvent({
