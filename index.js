@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+import { Octokit } from '@octokit/rest';
 
 try {
   // `who-to-greet` input defined in action metadata file
