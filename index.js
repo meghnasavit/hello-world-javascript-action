@@ -7,6 +7,14 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
+  const { owner, repo } = github.context.repo;
+  const event_type = 'custom';
+  octokit.repos.createDispatchEvent({
+      owner,
+      repo,
+      event_type,
+      client_payload: {"hi":"meghna"},
+  });
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
