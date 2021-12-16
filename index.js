@@ -19,7 +19,7 @@ try {
   information = JSON.parse(information);
   dates = information.dates;
   item = dates.find(item => {
-    return item.date == '16/12/2021'
+    return item.date == today
   })
   console.log(item.message);
 } catch (error) {
