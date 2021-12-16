@@ -17,7 +17,7 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   var information = fs.readFileSync('dates.json');
   information = JSON.parse(information);
-  const dates = information.dates;
+  const dates = JSON.parse(information.dates);
   console.log(`dates: ${dates}`);
   console.log(`information: ${information}`);
 } catch (error) {
