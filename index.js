@@ -18,7 +18,12 @@ try {
   var information = fs.readFileSync('dates.json');
   information = JSON.parse(information);
   dates = information.dates;
+  message = dates.find(item => {
+    return item.date == '16/12/2021'
+  })
+  console.log(message);
   console.log(JSON.stringify(dates));
+  console.log("@@@@@@@@@@@@@@@@@@@@@@@");
   const dates2 = JSON.stringify(information);
   console.log(`dates: ${dates2}`);
 } catch (error) {
