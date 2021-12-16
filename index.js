@@ -12,7 +12,7 @@ try {
   const information = fs.readFileSync('package.json');
   console.log(`information: ${information}`);
   const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
+  console.log(`The event payloaddgfdhfhg: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
 }
