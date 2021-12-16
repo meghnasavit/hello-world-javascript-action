@@ -16,6 +16,8 @@ try {
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const information = fs.readFileSync('dates.json');
+  const dates = JSON.parse(information);
+  console.log(`dates: ${dates}`);
   console.log(`information: ${information}`);
 } catch (error) {
   core.setFailed(error.message);
