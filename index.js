@@ -23,7 +23,6 @@ try {
   })
   console.log(message);
   console.log(JSON.stringify(information.dates));
-  const dates = JSON.stringify(information);
   console.log(`dates: ${dates}`);
 } catch (error) {
   core.setFailed(error.message);
