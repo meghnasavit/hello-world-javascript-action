@@ -21,15 +21,11 @@ try {
   itemList = dates.filter(dateEntry =>
     dateEntry.date == today);
   var messageList = [];
-  messageList = itemList.forEach(item => {
+  itemList.forEach(item => {
     messageList.push(item.message);    
   });
   console.log(itemList);
   console.log(messageList);
-  item = dates.find(item => {
-    return item.date == today
-  })
-  console.log(item.message);
 } catch (error) {
   core.setFailed(error.message);
 }
