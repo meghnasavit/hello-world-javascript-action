@@ -14,13 +14,13 @@ try {
   console.log(today);
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
+  // Get the JSON 
   var information = fs.readFileSync('dates.json');
   information = JSON.parse(information);
   dates = information.dates;
   itemList = dates.filter(dateEntry =>
     dateEntry.date == today);
-  const messageList = [];
+  var messageList = [];
   messageList = itemList.forEach(item => {
     messageList.push(item.message);    
   });
