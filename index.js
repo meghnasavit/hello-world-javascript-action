@@ -20,7 +20,11 @@ try {
   dates = information.dates;
   itemList = dates.filter(dateEntry =>
     dateEntry.date == today);
+  messageList = itemList.forEach(item => {
+    messageList.push(item.message);    
+  });
   console.log(itemList);
+  console.log(messageList);
   item = dates.find(item => {
     return item.date == today
   })
