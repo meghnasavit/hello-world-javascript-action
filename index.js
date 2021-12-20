@@ -3,9 +3,9 @@ const github = require('@actions/github');
 const fs = require('fs');
 
 try {
-  // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
+  // Get todays date
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -18,6 +18,9 @@ try {
   var information = fs.readFileSync('dates.json');
   information = JSON.parse(information);
   dates = information.dates;
+  itemList = dates.filter(dateEntry =>
+    dateEntry.date == today);
+  console.log(itemList);
   item = dates.find(item => {
     return item.date == today
   })
