@@ -20,6 +20,7 @@ try {
   dates = information.dates;
   itemList = dates.filter(dateEntry =>
     dateEntry.date == today);
+  const messageList = [];
   messageList = itemList.forEach(item => {
     messageList.push(item.message);    
   });
