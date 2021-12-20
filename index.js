@@ -24,7 +24,6 @@ try {
   itemList.forEach(item => {
     messageList.push(item.message);    
   });
-  console.log(itemList);
   console.log(messageList);
 } catch (error) {
   core.setFailed(error.message);
