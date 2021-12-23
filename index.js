@@ -3,8 +3,6 @@ const github = require('@actions/github');
 const fs = require('fs');
 
 try {
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
   // Get todays date
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
