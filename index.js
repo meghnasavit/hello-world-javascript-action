@@ -11,10 +11,10 @@ try {
   today = dd + '/' + mm + '/' + yyyy;
   console.log(today);
   // Get the JSON file with the dates and messages
-  var information = fs.readFileSync('dates.json');
-  information = JSON.parse(information);
-  dates = information.dates;
-  itemList = dates.filter(dateEntry =>
+  var file = fs.readFileSync('dates.json');
+  file = JSON.parse(file);
+  const datesList = file.dates;
+  itemList = datesList.filter(dateEntry =>
     dateEntry.date == today);
   var messageList = [];
   itemList.forEach(item => {
