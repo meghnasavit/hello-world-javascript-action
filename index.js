@@ -5,14 +5,12 @@ const fs = require('fs');
 try {
   // Get todays date in the required format
   var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  var yyyy = today.getFullYear();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
   today = dd + '/' + mm + '/' + yyyy;
   console.log(today);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON 
+  // Get the JSON file with the dates and messages
   var information = fs.readFileSync('dates.json');
   information = JSON.parse(information);
   dates = information.dates;
