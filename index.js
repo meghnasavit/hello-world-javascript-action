@@ -1,5 +1,4 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
 const fs = require('fs');
 
 try {
@@ -10,18 +9,25 @@ try {
   const yyyy = today.getFullYear();
   today = dd + '/' + mm + '/' + yyyy;
   console.log(today);
+
   // Get the JSON file with the dates and messages
   var file = fs.readFileSync('dates.json');
   file = JSON.parse(file);
   const datesList = file.dates;
-  itemList = datesList.filter(dateEntry =>
-    dateEntry.date == today);
+
+  // Get entries of festivals with todays date
+  itemList = datesList.filter(item =>
+    item.date == today);
+
+  // Get messages to post on slack channel
   var messageList = [];
   itemList.forEach(item => {
     messageList.push(item.message);    
   });
   console.log(messageList);
-  // core.setOutput("time", time);
+
+  // Set messageList as an output to be used in other workflow steps
+  core.setOutput("messageList", messageList);
 } catch (error) {
   core.setFailed(error.message);
 }
