@@ -1,8 +1,8 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Get festival dates'
+description: 'Read dates from JSON and post message to slack channel'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  messageList: # id of output
+    description: 'List of messages to be posted'
 runs:
   using: 'node12'
   main: 'index.js'
