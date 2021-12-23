@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const fs = require('fs');
 
 try {
-  // Get todays date
+  // Get todays date in the required format
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
   var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -23,6 +23,7 @@ try {
     messageList.push(item.message);    
   });
   console.log(messageList);
+  // core.setOutput("time", time);
 } catch (error) {
   core.setFailed(error.message);
 }
